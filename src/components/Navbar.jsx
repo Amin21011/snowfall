@@ -24,7 +24,7 @@ const Navbar = () => {
             <span className="font-bold text-lg text-black">Home</span>
           </Link>
           <Link href="/seasons" passHref>
-            <span className="font-bold text-lg text-black">Seasons</span>
+            <span className="font-bold text-lg text-black">Episode-Guide</span>
           </Link>
           <Link href="/locations" passHref>
             <span className="font-bold text-lg text-black">Locations</span>
@@ -55,7 +55,7 @@ const Navbar = () => {
           </Link>
           <br />
           <Link href="/seasons" passHref>
-            <span className="font-bold text-lg text-black">Seasons</span>
+            <span className="font-bold text-lg text-black">Episode-Guide</span>
           </Link>
           <br />
           <Link href="/locations" passHref>
