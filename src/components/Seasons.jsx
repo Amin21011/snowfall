@@ -21,7 +21,7 @@ const Seasons = () => {
           <div className="card bg-white shadow-md hover:shadow-lg w-1/4 m-2">
             <img src="season1.jpg" alt="Avatar" className="w-full" />
             <div className="container p-2">
-              <h4 className="text-lg font-bold">John Doe</h4> /* Verklein de tekstgrootte */
+              <h4 className="text-lg font-bold">John Doe</h4>
               <p>Architect & Engineer</p>
             </div>
             </div>
