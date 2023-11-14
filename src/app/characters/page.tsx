@@ -1,10 +1,11 @@
 import React from 'react';
-import Homepage from '@/components/Homepage';
+import Characters from '@/components/Characters';
+
 export default function Home() {
   return (
     <>
       <div>
-        <Homepage/>
+      <Characters/>
       </div>
     </>
   )
