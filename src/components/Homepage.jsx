@@ -8,7 +8,7 @@ const Homepage = () => {
   return (
     <div className="bg-cover bg-center h-screen relative">
       <img
-        src="/banner.jpg"
+        src="/snowfall.gif"
         alt="Achtergrondafbeelding"
         className="object-cover w-full h-full absolute inset-0"
       />

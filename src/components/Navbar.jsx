@@ -12,35 +12,35 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center border-b border-black p-4 bg-white sticky top-0 z-50">
+    <nav className="flex justify-between items-center border-b p-4 bg-black sticky top-0 z-50">
       <div className="flex items-center">
         <button onClick={handleToggleOffcanvas}>
-          <Bars3Icon className="h-6 w-6 text-black" />
+          <Bars3Icon className="h-6 w-6 text-white" />
         </button>
       </div>
       <div className="hidden md:flex justify-center flex-grow">
         <div className="flex space-x-32">
           <Link href="/" passHref>
-            <span className="font-bold text-lg text-black">Home</span>
+            <span className="font-bold text-lg text-white">Home</span>
           </Link>
           <Link href="/seasons" passHref>
-            <span className="font-bold text-lg text-black">Episode-Guide</span>
+            <span className="font-bold text-lg text-white">Episode-Guide</span>
           </Link>
           <Link href="/locations" passHref>
-            <span className="font-bold text-lg text-black">Locations</span>
+            <span className="font-bold text-lg text-white">Locations</span>
           </Link>
           <Link href="/characters" passHref>
-            <span className="font-bold text-lg text-black">Characters</span>
+            <span className="font-bold text-lg text-white">Characters</span>
           </Link>
           <Link href="/organizations" passHref>
-            <span className="font-bold text-lg text-black">Organizations</span>
+            <span className="font-bold text-lg text-white">Organizations</span>
           </Link>
         </div>
       </div>
 
       {showOffcanvas && (
   <div className="fixed inset-0 bg-gray-700 bg-opacity-50 z-50">
-    <div className="absolute inset-y-0 left-0 max-w-xs w-full bg-white">
+    <div className="absolute inset-y-0 left-0 max-w-xs w-full bg-black">
       <div className="flex justify-end">
         <button onClick={handleToggleOffcanvas} className="p-4">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,23 +51,23 @@ const Navbar = () => {
       <div className="py-4 px-8">
         <p className="mt-4">
           <Link href="/" passHref>
-            <span className="font-bold text-lg text-black">Home</span>
+            <span className="font-bold text-lg text-white">Home</span>
           </Link>
           <br />
           <Link href="/seasons" passHref>
-            <span className="font-bold text-lg text-black">Episode-Guide</span>
+            <span className="font-bold text-lg text-white">Episode-Guide</span>
           </Link>
           <br />
           <Link href="/locations" passHref>
-            <span className="font-bold text-lg text-black">Locations</span>
+            <span className="font-bold text-lg text-white">Locations</span>
           </Link>
           <br />
           <Link href="/characters" passHref>
-            <span className="font-bold text-lg text-black">Characters</span>
+            <span className="font-bold text-lg text-white">Characters</span>
           </Link>
           <br />
           <Link href="/organizations" passHref>
-            <span className="font-bold text-lg text-black">Organizations</span>
+            <span className="font-bold text-lg text-white">Organizations</span>
           </Link>
           <br />
         </p>
