@@ -21,19 +21,16 @@ const Navbar = () => {
       <div className="hidden md:flex justify-center flex-grow">
         <div className="flex space-x-32">
           <Link href="/" passHref>
-            <span className="font-bold text-lg text-white">Home</span>
+            <span className="font-bold text-lg text-white hover:text-orange-400">Home</span>
           </Link>
           <Link href="/seasons" passHref>
-            <span className="font-bold text-lg text-white">Episode-Guide</span>
-          </Link>
-          <Link href="/locations" passHref>
-            <span className="font-bold text-lg text-white">Locations</span>
+            <span className="font-bold text-lg text-white hover:text-orange-400">Episode-Guide</span>
           </Link>
           <Link href="/characters" passHref>
-            <span className="font-bold text-lg text-white">Characters</span>
+            <span className="font-bold text-lg text-white hover:text-orange-400">Characters</span>
           </Link>
-          <Link href="/organizations" passHref>
-            <span className="font-bold text-lg text-white">Organizations</span>
+          <Link href="/locations" passHref>
+            <span className="font-bold text-lg text-white hover:text-orange-400">Locations</span>
           </Link>
         </div>
       </div>
@@ -51,23 +48,19 @@ const Navbar = () => {
       <div className="py-4 px-8">
         <p className="mt-4">
           <Link href="/" passHref>
-            <span className="font-bold text-lg text-white">Home</span>
+            <span className="font-bold text-lg text-white hover:text-orange-400">Home</span>
           </Link>
           <br />
           <Link href="/seasons" passHref>
-            <span className="font-bold text-lg text-white">Episode-Guide</span>
-          </Link>
-          <br />
-          <Link href="/locations" passHref>
-            <span className="font-bold text-lg text-white">Locations</span>
+            <span className="font-bold text-lg text-white hover:text-orange-400">Episode-Guide</span>
           </Link>
           <br />
           <Link href="/characters" passHref>
-            <span className="font-bold text-lg text-white">Characters</span>
+            <span className="font-bold text-lg text-white hover:text-orange-400">Characters</span>
           </Link>
           <br />
-          <Link href="/organizations" passHref>
-            <span className="font-bold text-lg text-white">Organizations</span>
+          <Link href="/locations" passHref>
+            <span className="font-bold text-lg text-white hover:text-orange-400">Locations</span>
           </Link>
           <br />
         </p>
