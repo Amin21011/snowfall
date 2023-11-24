@@ -1,11 +1,23 @@
 import Franklin from '/public/characters/Franklin.webp';
+import Teddy from '/public/characters/Teddy.webp';
+import Gustavo from '/public/characters/Gustavo.webp';
+import Jerome from '/public/characters/Jerome.webp';
+import Leon from '/public/characters/Leon.webp';
+import Cissy from '/public/characters/Cissy.webp';
+import Louie from '/public/characters/Louie.webp';
+import Wanda from '/public/characters/Wanda.webp';
+import Veronique from '/public/characters/Veronique.webp';
+import Ruben from '/public/characters/Ruben.webp';
 
 export const charactersData = [
-  { id: 1, name: "Franklin", image: Franklin, description: "Franklin Saint is one of the three protagonist in the FX original series, Snowfall. He is a 19 year old convenience store clerk who rose to become South Central LA's notorious drug kingpin and the patriarch of the Family." },
+  { id: 1, name: "Franklin", image: Franklin},
+  { id: 2, name: "Teddy", image: Teddy},
+  { id: 3, name: "Gustavo", image: Gustavo},
+  { id: 4, name: "Jerome", image: Jerome},
+  { id: 5, name: "Leon", image: Leon},
+  { id: 6, name: "Cissy", image: Cissy},
+  { id: 7, name: "Louie", image: Louie},
+  { id: 8, name: "Wanda", image: Wanda},
+  { id: 9, name: "Veronique", image: Veronique},
+  { id: 10, name: "Ruben", image: Ruben},
 ];
-
-
-//   { id: 2, name: "Teddy", image: Teddy, description: "Theodore 'Teddy' E. McDonald is one of three protagonists on the show and a CIA officer in the war against communism as well as the primary antagonist for Franklin's storyline in Seasons 5 and 6" },
-//   { id: 3, name: "Franklin", image: Franklin, description: "Franklin Saint is one of the three protagonist in the FX original series, Snowfall. He is a 19 year old convenience store clerk who rose to become South Central LA's notorious drug kingpin and the patriarch of the Family." },
-//   { id: 4, name: "Franklin", image: Franklin, description: "Franklin Saint is one of the three protagonist in the FX original series, Snowfall. He is a 19 year old convenience store clerk who rose to become South Central LA's notorious drug kingpin and the patriarch of the Family." },
-//   { id: 5, name: "Franklin", image: Franklin, description: "Franklin Saint is one of the three protagonist in the FX original series, Snowfall. He is a 19 year old convenience store clerk who rose to become South Central LA's notorious drug kingpin and the patriarch of the Family." },
