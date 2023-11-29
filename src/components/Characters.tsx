@@ -1,48 +1,52 @@
 import React from 'react';
-import { season1 } from '../data/charactersData';
+import { main, side } from '../data/charactersData';
 import Image from 'next/image';
 
 const Characters = () => {
-  const imageSize = 125;
+  const imageMain = 125;
+  const imageSide = 125;
 
   return (
     <div className="flex flex-col items-center">
-      <div>
-        <h1 className="text-3xl font-bold">Season 1</h1>
-        <div className="flex gap-4">
-          {season1.map((character) => (
-            <div key={character.id} className="text-center">
-              <Image
-                src={character.image}
-                alt={character.name}
-                width={imageSize}
-                height={imageSize}
-                style={{ objectFit: 'cover', width: imageSize, height: imageSize }}
-              />
-              <h2>{character.name}</h2>
-              <p>{character.description}</p>
-            </div>
-          ))}
-        </div>
+    <div className="mb-8">
+      <h1 className="text-4xl font-bold mb-4">Main Characters</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+        {main.map((character) => (
+          <div key={character.id} className="bg-white p-4 rounded-lg shadow-md text-center">
+            <Image
+              src={character.image}
+              alt={character.name}
+              width={imageMain}
+              height={imageMain}
+              className="rounded-md mb-4"
+            />
+            <h2 className="text-lg font-semibold mb-2">{character.name}</h2>
+            <p className="text-gray-600">{character.description}</p>
+          </div>
+        ))}
       </div>
     </div>
+
+    <div className="mb-8">
+      <h1 className="text-4xl font-bold mb-4">Side Characters</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+        {side.map((character) => (
+          <div key={character.id} className="bg-white p-4 rounded-lg shadow-md text-center">
+            <Image
+              src={character.image}
+              alt={character.name}
+              width={imageSide}
+              height={imageSide}
+              className="rounded-md mb-4"
+            />
+            <h2 className="text-lg font-semibold mb-2">{character.name}</h2>
+            <p className="text-gray-600">{character.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
   );
 };
 
 export default Characters;
-
-
-
-
-
-// <div>
-// <h1 className="text-3xl font-bold">Season 2</h1>
-// <div className="flex gap-4">
-//   {charactersData1.map((character) => (
-//     <div key={character.id} className="text-center">
-//       <Image src={character.image} alt={character.name} width={100} height={100} />
-//       <h2>{character.name}</h2>
-//     </div>
-//   ))}
-// </div>
-// </div>
