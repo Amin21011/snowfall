@@ -28,11 +28,11 @@ const Seasons = () => {
       />
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
         <h1 className="font-bold text-6xl text-white mb-4">Season {currentSeason}</h1>
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-4">
           {currentEpisodes.map((episode, index) => (
             <div key={index} className="card bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r shadow-md hover:shadow-lg w-64 m-5 rounded-lg">
-              <h2 className="text-xl font-bold text-center text-white">{episode.title}</h2>
-              <img src={episode.image} alt="Avatar" className="w-full" />
+              <h2 className="text-xl font-bold text-center text-white my-2">{episode.title}</h2>
+              <img src={episode.image} alt="Avatar" className="w-full h-40 object-cover" />
               <div className="container p-2">
                 <h4 className="text-lg font-bold text-center text-white">Episode</h4>
                 <p className="font-bold text-center text-white">{episode.number}</p>

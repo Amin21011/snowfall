@@ -120,7 +120,7 @@ const episodes = {
         number: "3.3",
       },
       {
-        title: "The Game That Moves as You Play",
+        title: "The Game That Moves",
         image: "/season3/The_Game_That_Moves_as_You_Play.jpg",
         number: "3.4",
       },
