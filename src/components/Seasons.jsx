@@ -1,7 +1,6 @@
-// Seasons.js
 "use client";
 import React, { useState } from 'react';
-import episodes from '../data/seasonsData'; // Import episodes from the separate file
+import episodes from '../data/seasonsData';
 
 const Seasons = () => {
   const [currentSeason, setCurrentSeason] = useState(1);
@@ -17,7 +16,47 @@ const Seasons = () => {
     setCurrentEpisodeIndex((prevIndex) => (prevIndex - itemsPerPage + episodes[currentSeason].length) % episodes[currentSeason].length);
   };
 
-  const currentEpisodes = episodes[currentSeason].slice(currentEpisodeIndex, currentEpisodeIndex + itemsPerPage);
+  const snowfall = {
+    fontFamily: "'Bebas Neue', sans-serif",
+  };
+
+  const getGradientClasses = () => {
+    switch (currentSeason) {
+      case 1:
+        return 'bg-gradient-to-r from-green-500 to-green-700';
+      case 2:
+        return 'bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900';
+      case 3:
+        return 'from-blue-700 via-blue-800 to-gray-900';
+      case 4:
+        return 'from-fuchsia-600 to-pink-600';
+      case 5:
+        return 'from-slate-900 via-purple-900 to-slate-900';
+      case 6:
+        return 'from-red-500 to-red-800';
+      default:
+        return 'bg-gradient-to-r from-green-500 to-green-700';
+    }
+  };
+
+  const getButtonGradientClasses = () => {
+    switch (currentSeason) {
+      case 1:
+        return 'bg-gradient-to-r from-green-500 to-green-700';
+      case 2:
+        return 'bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900';
+      case 3:
+        return 'from-blue-700 via-blue-800 to-gray-900';
+      case 4:
+        return 'from-fuchsia-600 to-pink-600';
+      case 5:
+        return 'from-slate-900 via-purple-900 to-slate-900';
+      case 6:
+        return 'from-red-500 to-red-800';
+      default:
+        return 'bg-gradient-to-r from-green-500 to-green-700';
+    }
+  };
 
   return (
     <div className="bg-cover bg-center h-screen relative">
@@ -27,35 +66,48 @@ const Seasons = () => {
         className="object-cover w-full h-full absolute inset-0"
       />
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
-        <h1 className="font-bold text-6xl text-white mb-4">Season {currentSeason}</h1>
+        <h1 className="font-bold text-6xl text-white mb-4" style={snowfall}>Season {currentSeason}</h1>
         <div className="flex justify-center mb-4">
-          {currentEpisodes.map((episode, index) => (
-            <div key={index} className="card bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r shadow-md hover:shadow-lg w-64 m-5 rounded-lg">
-              <h2 className="text-xl font-bold text-center text-white my-2">{episode.title}</h2>
+          {episodes[currentSeason].slice(currentEpisodeIndex, currentEpisodeIndex + itemsPerPage).map((episode, index) => (
+            <div
+              key={index}
+              className={`card bg-gradient-to-r shadow-md hover:shadow-lg w-64 m-5 rounded-lg ${getGradientClasses()}`}
+            >
+              <h2 className="text-xl text-center text-white my-2">{episode.title}</h2>
               <img src={episode.image} alt="Avatar" className="w-full h-40 object-cover" />
               <div className="container p-2">
-                <h4 className="text-lg font-bold text-center text-white">Episode</h4>
-                <p className="font-bold text-center text-white">{episode.number}</p>
+                <h4 className="text-lg text-center text-white">Episode</h4>
+                <p className="text-center text-white">{episode.number}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-        <div className="inline-flex mt-2 xs:mt-0">
-          <button
-            onClick={previousEpisode}
-            className={`flex items-center justify-center px-4 h-10 text-base font-medium text-white bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r rounded-lg ${currentEpisodeIndex === 0 ? 'hidden' : 'block'}`}
-          >
-            Previous
-          </button>
-        </div>
-        <div>
+        <div
+          className={`inline-flex mt-2 xs:mt-0 transition-opacity duration-300 ${
+            currentEpisodeIndex + itemsPerPage >= episodes[currentSeason].length
+              ? 'opacity-0 pointer-events-none'
+              : 'opacity-100 pointer-events-auto'
+          }`}
+        >
           <button
             onClick={nextEpisode}
-            className={`flex items-center justify-center px-4 h-10 text-base font-medium text-white bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r rounded-lg ${currentEpisodeIndex + itemsPerPage >= episodes[currentSeason].length ? 'hidden' : 'block'}`}
+            className={`flex items-center justify-center px-4 h-10 text-base font-medium text-white rounded-lg bg-gradient-to-r ${getButtonGradientClasses()}`}
           >
             Next
+          </button>
+        </div>
+        <div
+          className={`inline-flex mt-2 xs:mt-0 transition-opacity duration-300 ${
+            currentEpisodeIndex === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+          }`}
+        >
+          <button
+            onClick={previousEpisode}
+            className={`flex items-center justify-center px-4 h-10 text-base font-medium text-white rounded-lg bg-gradient-to-r ${getButtonGradientClasses()}`}
+          >
+            Previous
           </button>
         </div>
       </div>

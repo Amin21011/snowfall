@@ -14,7 +14,8 @@ interface CharacterModalProps {
 
 const CharacterModal: React.FC<CharacterModalProps> = ({ character, onClose }) => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
+      {/* z-50 is a higher value than the z-index of the cards */}
       <div className="bg-white p-8 rounded-lg shadow-md text-center flex items-center max-w-prose">
         <div className="mr-8">
           <Image
