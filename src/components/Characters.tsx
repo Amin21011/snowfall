@@ -34,7 +34,7 @@ const Characters: React.FC = () => {
       <img
         src={`./backgrounds/la.jpg`}
         alt="Achtergrondafbeelding"
-        className="object-cover w-full h-full absolute inset-0"
+        className="object-cover w-full h-full absolute inset-0 blur-sm"
       />
       <div className="flex flex-col items-center relative z-10">
         <div className="mt-8">
@@ -64,6 +64,7 @@ const Characters: React.FC = () => {
           <CharacterModal character={selectedCharacter} onClose={closeModal} />
         )}
       </div>
+      <div className="border-t-4 border-black w-full absolute bottom-0"></div>
     </div>
   );
 };
