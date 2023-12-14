@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { main } from '../data/charactersData';
 import Image from 'next/image';
 import CharacterModal from './CharacterModal';
@@ -18,6 +18,15 @@ const snowfall = {
 };
 
 const Characters: React.FC = () => {
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   const imageMain = 125;
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
 
@@ -37,7 +46,7 @@ const Characters: React.FC = () => {
         className="object-cover w-full h-full absolute inset-0 blur-sm"
       />
       <div className="flex flex-col items-center relative z-10">
-        <div className="mt-8">
+        <div className="mt-16">
           <h1 className="text-4xl font-bold mb-12 text-white">Main Cast</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
             {main.map((character) => (

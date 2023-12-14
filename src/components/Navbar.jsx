@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
+
 
 const Navbar = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
@@ -13,27 +15,40 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center border-b p-4 bg-black sticky top-0 z-50">
-      <div className="flex items-center">
-        <button onClick={handleToggleOffcanvas}>
-          <Bars3Icon className="h-6 w-6 text-white" />
-        </button>
-      </div>
-      <div className="hidden md:flex justify-center flex-grow">
-        <div className="flex space-x-32">
-          <Link href="/" passHref>
-            <span className="font-bold text-lg text-white hover:text-orange-400">Home</span>
-          </Link>
-          <Link href="/seasons" passHref>
-            <span className="font-bold text-lg text-white hover:text-orange-400">Episode-Guide</span>
-          </Link>
-          <Link href="/characters" passHref>
-            <span className="font-bold text-lg text-white hover:text-orange-400">Characters</span>
-          </Link>
-          <Link href="/locations" passHref>
-            <span className="font-bold text-lg text-white hover:text-orange-400">Locations</span>
-          </Link>
-        </div>
-      </div>
+        <div className="flex items-center">
+    <button onClick={handleToggleOffcanvas}>
+      <Bars3Icon className="h-6 w-6 text-white" />
+    </button>
+  </div>
+  <div className="hidden md:flex justify-center flex-grow">
+    <div className="flex space-x-32">
+      <Link href="/" passHref>
+        <span className="font-bold text-lg text-white hover:text-orange-400">Home</span>
+      </Link>
+      <Link href="/seasons" passHref>
+        <span className="font-bold text-lg text-white hover:text-orange-400">Episode-Guide</span>
+      </Link>
+      <Link href="/characters" passHref>
+        <span className="font-bold text-lg text-white hover:text-orange-400">Characters</span>
+      </Link>
+      <Link href="/locations" passHref>
+        <span className="font-bold text-lg text-white hover:text-orange-400">Locations</span>
+      </Link>
+    </div>
+  </div>
+  <div className="flex items-center space-x-8">
+  <Link href="https://www.linkedin.com/in/amin-mousoun-371a36261/" passHref>
+    <span className="text-white hover:text-blue-800">
+      <BsLinkedin className="text-2xl" />
+    </span>
+  </Link>
+  <Link href="https://github.com/Amin21011" className="text-white hover:text-gray-600" passHref>
+    <span className="text-white hover:text-blue-800">
+      <BsGithub className="text-2xl" />
+    </span>
+  </Link>
+</div>
+
 
       {showOffcanvas && (
   <div className="fixed inset-0 bg-gray-700 bg-opacity-50 z-50">

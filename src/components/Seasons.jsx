@@ -1,8 +1,16 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import episodes from '../data/seasonsData';
 
 const Seasons = () => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   const [currentSeason, setCurrentSeason] = useState(1);
   const [currentEpisodeIndex, setCurrentEpisodeIndex] = useState(0);
   const [selectedEpisode, setSelectedEpisode] = useState(null); // New state for selected episode
@@ -18,7 +26,7 @@ const Seasons = () => {
   };
 
   const snowfall = {
-    fontFamily: "'Bebas Neue', sans-serif",
+    fontFamily: "-apple-system, BlinkMacSystemFont, -webkit-system-font, 'Malgun Gothic', 'Segoe UI', 'Helvetica Neue', Helvetica, sans-serif",
   };
 
   const getGradientClasses = () => {
@@ -66,7 +74,7 @@ const Seasons = () => {
         alt="Achtergrondafbeelding"
         className="object-cover w-full h-full absolute inset-0"
       />
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 text-center">
         <h1 className="font-bold text-6xl text-white mb-4" style={snowfall}>
           Season {currentSeason}
         </h1>
@@ -110,14 +118,13 @@ const Seasons = () => {
 
 
 
-<div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
         {selectedEpisode === null && (
           <div
-            className={`inline-flex mt-2 xs:mt-0 transition-opacity duration-300 ${
-              currentEpisodeIndex + itemsPerPage >= episodes[currentSeason].length
-                ? 'opacity-0 pointer-events-none'
-                : 'opacity-100 pointer-events-auto'
-            }`}
+            className={`inline-flex mt-2 xs:mt-0 transition-opacity duration-300 ${currentEpisodeIndex + itemsPerPage >= episodes[currentSeason].length
+              ? 'opacity-0 pointer-events-none'
+              : 'opacity-100 pointer-events-auto'
+              }`}
           >
             <button
               onClick={nextEpisode}
@@ -130,9 +137,8 @@ const Seasons = () => {
 
         {selectedEpisode === null && (
           <div
-            className={`inline-flex mt-2 xs:mt-0 transition-opacity duration-300 ${
-              currentEpisodeIndex === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
-            }`}
+            className={`inline-flex mt-2 xs:mt-0 transition-opacity duration-300 ${currentEpisodeIndex === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+              }`}
           >
             <button
               onClick={previousEpisode}
