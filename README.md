@@ -5,7 +5,6 @@
 <br />
 
 The "Snowfall" fanwiki is an online hub for enthusiasts of the 1980s-set TV series, providing episode guides and character insights. The website is built with NextJs and Tailwind. The website is hosted on Vervel and can be found [HERE](https://snowfall-wiki.vercel.app/). Down below you can find how to install the project and run it locally.
-
 <br />
 
 ## Installation
